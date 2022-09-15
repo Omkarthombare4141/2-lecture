@@ -1,0 +1,155 @@
+
+Q.why getters &setters are used?
+1.getter setter used for assigning values to private variable.
+
+
+Q.what is a class?
+1.class is a collection of attribute & behaviour.
+2.class is blueprint or template.
+3.class is always public or we can create default.
+4.we cannot create class as a private
+
+Q.what is a object?
+1.object is a instance of class.
+2.object is created using new keyword in java.
+memeory is allocated in heap area.
+                                                                      stack                heap
+ public class Employee{                                           |-----------|--------------------|      
+	//instance variable
+
+	private int eId;                                     ref var            |                    |
+	private String eName;                                       |    e1class|>>    eid           |                                                                        
+	private double eSal;							|		|	 ename         |		
+	set                                                         |		|	 esal          |
+	get										|		|			   |
+}                          							----------------------------------
+
+Q.what is a constructor?
+1.constructor name & class name is always same.
+2.constructor is used to  initialize the member variable of class.
+3.constructor does not have any return type.
+4.when we create a object then the constructor will invoke(call) automatically.
+5.without argument constructor is called as default constructor.
+e.g public Account(){
+            }
+6.Constructor with Arguments is called as a parametric constructor.
+e.g public Account(int accNo, String custName,double accBal){
+			this.accNo=accNo;
+			this.custName=custName;
+			this.accBal=accBal;
+	}
+
+Q.this keyword?
+there are 3 uses of this keyword
+1.Resolve the ambiquity betn instance variable if they are having the same name.
+2.call another constructor of same class.
+3.this means current object.
+
+Q.use of setters & getters?
+1.To get the value of private data member outside the class we can use getter method.
+2.To set the value or modify the value of private data members of a class we can use setter method.
+
+Q.Access Spacifier
+there are 4  access spacifier in java:
+1.private
+private variables we cannot access outside the class.
+2.public
+public variables or methods we can access outside the class.
+3.default
+default data members we can access within the same package only.
+4.protected
+protected data members can be access by derived class or child class only.
+
+base class=parent class
+Derived class=child class
+
+Q.super keyword
+There are 3 use of super keyword:
+1.To call base class if there is same variable in base & derived class.
+2.Is used to call parametric constructor of base class.
+3.to call base class same name method.
+
+Q.Inheritance
+1.  inheritance means reusability.
+2.inheritance always follows is relationship.
+3.There are diff.types of inheritance
+   a.single inheritance
+       A--B
+   b.Multi level inheitance
+       A--B--C
+   c.Multiple Inheritance
+     a--- c ---b
+   d.hybrid inheritance
+    Combination of more than one inheritance is called as hybrid inheritance.
+   e.hierachical inheritance
+      b---  a ----c
+    
+1.java does not support multiple inheritance because there is a diamond problem in c++.
+As per the rule if there are more than one base class & if you are  creating object of child class,first base class objects will be created.
+2.There is possibility of ambiquity in code(if the both base class has same name method)
+3.To avoid this ambiquity java does not support multiple inheritance.
+e.g 
+class a
+abc();
+class b
+abc();
+class c extends a,b
+abc();// 
+
+
+Q.Final keyword
+There are 3 use of final keyword:
+1.final variable
+  we cannot change the value of final Variable.
+class base {
+final double pi=3.14
+public void display(){
+pi=4;  //error can't change the value of final
+}
+}
+2.final method cannot override.
+3.we cannot inherit final class.
+
+Q.overriding
+1.means we can use base class methods in derived class with same signature.
+e.g    class shape
+		public void findarea(){}
+	Class circle extends shape
+		public void findarea(){}
+2.while overriding method     public > protected > default > private
+3. In overriding we can increase the visibility of access specifier but we can decrease
+
+
+			Abstract class  										Interface class
+1.abstract class contains abstract as well as					1.Interface has by default all the methods public & abstract.
+non abstract methods.																	
+2.we can extend only one abstract class.						2.we can implement more than one interface.
+3.Variables in abstract class are normal variables.				3.Variables which is declared in interface are by default final& static.
+
+we cannot  create object of abstract class & interface.
+
+Q.Dynamic or runtime polymorphism
+1.Runtime polymorphism or subclass behave like a parent class means by taking reference of parent class,we can create object of child class then call 
+the overriden method for the child class.
+2.After this we can use same refernce of the child class for the another child class and call the parent class
+method for the another child class.
+
+Q.Object class
+1.Object class has 5 methods we can overrride this methods in many class.
+2.object class is a base class of all the classes in java.
+methods:
+a.two string() - print the object in the form of string.
+b.equals() 	- check the equality of two objects in terms of containt & memory.
+c.finalize()	- used in garbage collection to close database coonection,sockets,etc before removing the object fro  the memory.
+d.hashcoce()	- check the equality of object on the basis of memory.
+e.clone()	- 
+
+wait()
+
+
+notify()
+
+notify all()
+
+
+what is  the fuctional interface & lambda expression?
